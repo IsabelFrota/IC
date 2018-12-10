@@ -88,14 +88,14 @@ def nn(conj_treino, conj_teste):
     return resp, vizinho
 
 data = pd.read_csv("iris.csv")
-teste = [[7.2, 3.6, 5.1, 2.5]]
+teste = [[7.5, 3.4, 5.0, 2.4]]
 res = pd.DataFrame(teste)
 k = 5
-res1, n1 = nn(data, teste)
-res2, n2 = knn(data, teste, k)
-res3, n3 = dmc(data, teste)
+res1, n1 = nn(data, res)
+res2, n2 = knn(data, res, k)
+res3, n3 = dmc(data, res)
 
 print("\nResultados: ")
-print("NN\n\tResults: {} - Vizinho: {}".format(res1, n1))
-print("KNN\n\tResults: {} - Vizinho: {}".format(res2, n2))
-print("DMC\n\tResults: {} - Vizinho(Centroide): {}".format(res3, n3))
+print("DMC\n\tResultado: {} - Vizinho(Centroide): {}".format(res3, n3))
+print("NN\n\tResultado: {} - Vizinho: {}".format(res1, n1))
+print("KNN\n\tResultado: {} - Vizinho: {}".format(res2, n2))
